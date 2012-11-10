@@ -41,7 +41,6 @@ exports.edit = function(req, res) {
       rest.get(url).on('complete', function(data, response) {
         if (response.statusCode == 200) {
           db.User.find({ githubID: data['id'] }, function(error, response) {
-            console.log('response',response);
             if (response.length === 0) {
               var user = new db.User({
                 name: data['name'],
