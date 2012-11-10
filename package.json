@@ -1,16 +1,23 @@
 {
   "name": "nko3-plus-team",
-  "version": "0.0.0-1",
+  "version": "0.0.1",
   "description": "Plus Team",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server/server.js"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:nko3/plus-team.git"
   },
-  "dependencies": {},
+  "dependencies": {
+    "express": "3.0.2",
+    "express-resource": "0.2.4",
+    "mongoose": "3.3.1",
+    "oauth": "0.9.8",
+    "underscore": "1.4.2",
+    "less": "1.3.1"
+  },
   "engines": {
     "node": "0.8.x"
   },
