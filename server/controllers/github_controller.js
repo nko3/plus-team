@@ -29,7 +29,7 @@ exports.edit = function(req, res) {
   var url = 'https://github.com/login/oauth/access_token';
   var data =  {
     'client_id': app.get('github-client-id'),
-    'redirect_uri': app.get('redirect-uri') + '/github/edit',
+    'redirect_uri': app.get('redirect-uri') + 'github/edit',
     'code': req.query['code'],
     'client_secret': app.get('github-client-secret')
   };
@@ -37,7 +37,6 @@ exports.edit = function(req, res) {
     if (response.statusCode == 200) {
       var accessToken = data.split('&')[0]
       var url = 'https://api.github.com/user?' + accessToken;
-      console.log('accessToken', accessToken);
       rest.get(url).on('complete', function(data, response) {
         if (response.statusCode == 200) {
           db.User.find({ githubID: data['id'] }, function(error, response) {
