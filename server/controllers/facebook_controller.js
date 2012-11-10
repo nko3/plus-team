@@ -49,7 +49,6 @@ exports.edit = function(req, res) {
               user.name = data.name;
               user.save(function() {
                 req.session.user_id = user._id;
-                console.log('user_id', req.session.user_id);
                 res.redirect('/');
               });
             } else {
@@ -61,7 +60,6 @@ exports.edit = function(req, res) {
               });
               user.save(function() {
                 req.session.user_id = user._id;
-                console.log('user_id', req.session.user_id);
                 res.redirect('/');
               });
             }
