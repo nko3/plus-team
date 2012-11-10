@@ -15,16 +15,20 @@ img.logo {
 	top: 12px;
 }
 .user-info {
+	clear:both;
+	height:128px;
+}
+.user-name {
 	float:left;
-	max-width:224px;
+	width:55%;
 	padding:4px 0 0 16px;
 }
 
-.user-info h1 {
+.user-name h1 {
 	font:bold 2.5em/0.9 'Rokkitt', Arial, sans-serif;
 	margin-bottom:0;
 }
-.user-info h2 {
+.user-name h2 {
 	font:normal 1.2em/1.2 'Rokkitt', sans-serif;
 	margin:0;
 }
@@ -40,7 +44,16 @@ hr.user-divider {
 	min-height:160px;
 	box-shadow:2px 2px 4px #C5C5C5;
 }
+.user-content.dark {
+	background:rgba(0,0,0,.5);
+	color:#fff;
+	text-shadow:1px 1px 1px #000;
+}
 
+.user-status {
+	min-height: 124px;
+	padding:12px;
+}
 /* ----- css sprites ---- */
 #sprite_stash {
 	background:url('../img/sprite_stash.png');
@@ -96,4 +109,12 @@ ul.stat-list li div.menu-item {
 	line-height: 44px;
 	float: left;
 	margin-left: 8px;
+}
+
+.login-div {
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	display: block;
+	line-height: 158px;
 }
