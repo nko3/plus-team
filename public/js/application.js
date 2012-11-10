@@ -12,3 +12,7 @@ var GL = {
     new GL.Routers.Application();
   }
 };
+
+$(function() {
+  GL.init();
+});
