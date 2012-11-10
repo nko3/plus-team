@@ -18,5 +18,5 @@ fi
 
 # Start server
 cd $DIR
-npm update
+# npm update
 node $ARGS $DIR/server/server.js $@
