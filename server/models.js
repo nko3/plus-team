@@ -3,38 +3,19 @@ var mongoose = require('mongoose'),
     ObjectId = Schema.ObjectId,
     Mixed = Schema.Types.Mixed;
 
-const GENDER_MALE = "male";
-const GENDER_FEMALE = "female";
-const GENDER_OTHER = "other";
-
 var User = new Schema({
+  facebook: {},
+  facebookAccessToken: String,
+  instagram: {},
+  instagramAccessToken: String,
+  github: {},
+  githubAccessToken: String,
   name: {
     type: String,
     index: true
   },
-  email: String,
-  gender: {
-    type: String,
-    enum: [ GENDER_MALE, GENDER_FEMALE, GENDER_OTHER ]
-  },
-  username: String,
-  githubID: {
-    type: String,
-    index: true
-  },
-  githubToken: String,
-  facebookID: {
-    type: String,
-    index: true
-  },
-  facebookToken: String
+  email: String
 });
-
-User.statics.GENDER = {
-  MALE: GENDER_MALE,
-  FEMALE: GENDER_FEMALE,
-  OTHER: GENDER_OTHER
-};
 
 exports.db = {
   User: mongoose.model('User', User)

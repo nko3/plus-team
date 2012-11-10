@@ -39,33 +39,17 @@ exports.edit = function(req, res) {
       var url = 'https://api.github.com/user?' + accessToken;
       rest.get(url).on('complete', function(data, response) {
         if (response.statusCode == 200) {
-          db.User.find({ githubID: data['id'] }, function(error, response) {
-            if (response.length === 0) {
-              var user = new db.User({
-                name: data['name'],
-                email: data['email'],
-                username: data['login'],
-                githubID: data['id'],
-                githubToken: accessToken.split('=')[1]
-              });
-              user.save(function (err) {
-                // if (err) // ...
-                // res.end('meow');
-                console.log(err, 'save')
-              });
-            } else {
-              user = response[0];
-            }
-            req.session.user = user;
-            if (user['facebookID']) {
+          var user = db.User.findOne({ _id: req.session.user_id }, function(err, user) {
+            user.github = data;
+            user.githubAccessToken = accessToken.split('=')[1];
+            user.save(function() {
               res.redirect('/');
-            } else {
-              res.redirect('/facebook/new');
-            }
+            });
           });
+        } else {
+          // TODO: handle error
         }
       });
     }
   });
-  // res.render('layout');
 }

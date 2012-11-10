@@ -44,6 +44,7 @@ exports.edit = function(req, res) {
           var user = db.User.findOne({'facebook.id': data.id}, function(err, user) {
             if (user) {
               user.facebook = data;
+              user.facebookAccessToken = accessToken.split('=')[1];
               user.email = data.email;
               user.username = data.username;
               user.name = data.name;
@@ -54,6 +55,7 @@ exports.edit = function(req, res) {
             } else {
               user = new db.User({
                 facebook: data,
+                facebookAccessToken: accessToken.split('=')[1],
                 email: data.email,
                 username: data.username,
                 name: data.name
