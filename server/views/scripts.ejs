@@ -9,6 +9,12 @@
 <script src="/js/views/init_view.js"></script>
 <script src="/js/views/not_found_view.js"></script>
 <script src="/js/views/login_view.js"></script>
+<script src="/js/views/profile_view.js"></script>
 
 <script src="/js/routers/base_router.js"></script>
+
+<% if (user) { %>
+<script src="/js/routers/authenticated_router.js"></script>
+<% } else { %>
 <script src="/js/routers/anonymous_router.js"></script>
+<% } %>

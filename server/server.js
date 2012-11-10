@@ -41,6 +41,10 @@ app.configure(function() {
   app.use(expressSession);
   app.use(LessMiddleware({ src: app.set('public-dir'), compress: true }));
   app.use(express.static(app.set('public-dir')));
+  app.use(function(req, res, next) {
+    res.locals.user = req.session.user;
+    next();
+  });
 });
 
 // Connect to mongoose.
@@ -50,7 +54,6 @@ mongoose.connect(app.set('db-uri'), function(error) {
 
 // Express routing.
 routing.attach(app);
-
 
 // Start listening the http server.
 app.listen(port, function() {
