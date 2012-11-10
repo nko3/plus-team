@@ -6,7 +6,7 @@ var db = null;
 
 exports.attach = function(_app) {
   app = _app;
-  db = app.db;
+  db = app.get('db');
 }
 
 exports.index = function(req, res) {
@@ -37,12 +37,33 @@ exports.edit = function(req, res) {
     if (response.statusCode == 200) {
       var accessToken = data.split('&')[0]
       var url = 'https://api.github.com/user?' + accessToken;
+      console.log('accessToken', accessToken);
       rest.get(url).on('complete', function(data, response) {
         if (response.statusCode == 200) {
-          console.log('data', data);
+          db.User.find({ githubID: data['id'] }, function(error, response) {
+            console.log('response',response);
+            if (response.length === 0) {
+              var user = new db.User({
+                name: data['name'],
+                email: data['email'],
+                username: data['login'],
+                githubID: data['id'],
+                githubToken: accessToken.split('=')[1]
+              });
+              user.save(function (err) {
+                // if (err) // ...
+                // res.end('meow');
+                console.log(err, 'save')
+              });
+            } else {
+              user = response[0];
+            }
+            req.session.user = user['_id'];
+            res.redirect('/');
+          });
         }
       });
     }
   });
-  res.render('layout');
+  // res.render('layout');
 }

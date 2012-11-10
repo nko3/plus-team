@@ -12,15 +12,21 @@ var User = new Schema({
     type: String,
     index: true
   },
-  email: [ String ],
+  email: String,
   gender: {
     type: String,
     enum: [ GENDER_MALE, GENDER_FEMALE, GENDER_OTHER ]
   },
   username: String,
-  githubID: String,
+  githubID: {
+    type: String,
+    index: true
+  },
   githubToken: String,
-  facebookID: String,
+  facebookID: {
+    type: String,
+    index: true
+  },
   facebookToken: String
 });
 
