@@ -1,6 +1,6 @@
 {
   "name": "nko3-plus-team",
-  "version": "0.0.0",
+  "version": "0.0.0-1",
   "description": "Plus Team",
   "main": "server.js",
   "scripts": {
@@ -10,8 +10,7 @@
     "type": "git",
     "url": "git@github.com:nko3/plus-team.git"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "engines": {
     "node": "0.8.x"
   },
