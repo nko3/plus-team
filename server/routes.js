@@ -12,6 +12,7 @@ exports.attach = function attachRoutes(app) {
   // Enable Auth endpoints.
   addController(app, 'facebook', null, ['edit']);
   addController(app, 'github', null, ['edit']);
+  addController(app, 'logout');
 
   app.all('*', function(req, res) {
     res.render('layout');

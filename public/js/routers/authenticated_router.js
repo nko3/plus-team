@@ -1,7 +1,7 @@
 GL.Routers.Application = GL.Routers.Base.extend({
   appRoutes: {
     '': 'home',
-    'login': 'login'
+    'profile': 'profile'
   },
 
   initialize: function() {
@@ -9,10 +9,11 @@ GL.Routers.Application = GL.Routers.Base.extend({
   },
 
   home: function() {
-    GL.Framework.navigate('login');
+    GL.Framework.navigate('profile');
   },
 
-  login: function() {
-    GL.Framework.RegionManager.show(new GL.Views.Login());
+  profile: function() {
+    GL.Framework.RegionManager.show(new GL.Views.Profile());
   }
+
 })

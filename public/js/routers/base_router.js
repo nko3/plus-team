@@ -5,6 +5,7 @@ GL.Routers.Base = GL.Framework.Router.extend({
 
   initialize: function() {
     GL.Framework.Router.prototype.initialize.call(this);
+    this._indexView = new GL.Views.Init();
   },
 
   notfound: function() {
