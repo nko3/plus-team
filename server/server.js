@@ -23,7 +23,11 @@ app.configure(function() {
   app.set('views', __dirname + '/views');
   app.set('view options', { layout: false, pretty: true });
   app.set('basepath', '/');
-  app.set('db-uri', 'mongodb://localhost/gl-' + app.settings.env);
+  app.set('db-uri', process.env.MONGOHQ_CONNECTION || 'mongodb://localhost/gl-' + app.settings.env);
+  app.set('github-client-id', process.env.GITHUB_CLIENT_ID || '');
+  app.set('github-client-secret', process.env.GITHUB_CLIENT_SECRET || '');
+  app.set('facebook-app-id', process.env.FACEBOOK_APP_ID || '');
+  app.set('facebook-app-secret', process.env.FACEBOOK_APP_SECRET || '');
   app.set('public-dir', __dirname + '/../public/');
   app.use(express.logger());
   app.use(express.methodOverride());
