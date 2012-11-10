@@ -29,6 +29,11 @@ img.logo {
 	margin:0;
 }
 
+hr.user-divider {
+	margin-top:0;
+	margin-bottom:8px;
+}
+
 .user-content {
 	background:#eee;
 	clear:both;
@@ -40,18 +45,28 @@ img.logo {
 #sprite_stash {
 	background:url('../img/sprite_stash.png');
 	background-position: 0px 0px;
-	height:18px;
+	height:20px;
 	width:130px;
+	cursor:pointer;
 }
 #sprite_stash.checked {
-	background-position:0 18px;
+	background-position:0 20px;
 }
 
+#sprite_ping {
+	background:url('../img/sprite_ping.png');
+	background-position: 0px 0px;
+	height:20px;
+	width:130px;
+	cursor:pointer;
+}
+#sprite_ping.checked {
+	background-position:0 20px;
+}
 
 
 /* ------ statistics ------ */
 .statistics {
-	border-top:2px solid #ccc;
 	margin:6px;
 }
 ul.stat-list {
@@ -59,8 +74,26 @@ ul.stat-list {
 	margin:4px;
 }
 ul.stat-list li {
-	border-bottom:2px solid #aaa;
-	padding:8px;
+	border-top:2px solid #aaa;
+	padding:4px;
 	margin-bottom:4px;
 	font:normal 1.4em/1.2 Arial, sans-serif;
+	clear:both;
+	display:block;
+}
+
+ul.stat-list li div.circle {
+	background: #aaa;
+	width: 42px;
+	height: 42px;
+	border-radius: 42px;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	color:#fff;
+}
+ul.stat-list li div.menu-item {
+	line-height: 44px;
+	float: left;
+	margin-left: 8px;
 }
