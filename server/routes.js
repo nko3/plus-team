@@ -11,7 +11,7 @@ exports.attach = function attachRoutes(app) {
 
   // Enable Auth endpoints.
   // addController(app, 'facebook');
-  // addController(app, 'github');
+  addController(app, 'github', null, ['edit']);
 
   app.all('*', function(req, res) {
     res.render('layout');
@@ -21,7 +21,7 @@ exports.attach = function attachRoutes(app) {
 function addController(app, name, opts, extraMappings) {
   var mappings = require('./controllers/' + name + '_controller');
   var controller = app.resource(name, mappings, opts);
-  controller.attach(app);
+  mappings.attach(app);
   if (extraMappings) {
     extraMappings.forEach(function(mapping) {
       var name = value = mapping;
