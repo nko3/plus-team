@@ -5,20 +5,34 @@ var Resource = require('express-resource');
  */
 exports.attach = function attachRoutes(app) {
   // Main landing page.
-  app.resource(require('./controllers/index_controller'));
+  var indexMapping = require('./controllers/index_controller');
+  indexMapping.attach(app);
+  app.resource(indexMapping);
 
-  app.get('/auth/github', function(req, res) {
-    // TODO: full GitHub auth URL
-    res.redirect('https://github.com/login/oauth/authorize');
-  });
-  
-  app.get('/auth/facebook', function(req, res) {
-    // TODO: full Facebook auth URL
-    res.redirect('https://www.facebook.com/dialog/oauth');
-  });
+  // Enable Auth endpoints.
+  // addController(app, 'facebook');
+  // addController(app, 'github');
 
   app.all('*', function(req, res) {
     res.render('layout');
   });
 }
 
+function addController(app, name, opts, extraMappings) {
+  var mappings = require('./controllers/' + name + '_controller');
+  var controller = app.resource(name, mappings, opts);
+  controller.attach(app);
+  if (extraMappings) {
+    extraMappings.forEach(function(mapping) {
+      var name = value = mapping;
+      if (typeof mapping == 'object') {
+        for (name in mapping) {
+          value = mapping[name];
+        }
+      }
+      controller.map('post', '/' + name, mappings[value]);
+      controller.map('get', '/' + name, mappings[value]);
+    });
+  }
+  return controller;
+}
