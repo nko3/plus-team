@@ -8,7 +8,9 @@ var express = require('express'),
     app = express(),
     store = new MongoStore({ db: 'gl-' + app.settings.env }),
     port = process.env.PORT || 8000,
-    _ = require('underscore')._;
+    _ = require('underscore')._,
+    OAuth = require('oauth').OAuth,
+    querystring = require('querystring');
 
 // Setup the session token.
 var expressSession = express.session({
