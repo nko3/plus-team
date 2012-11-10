@@ -19,7 +19,8 @@ exports.new = function(req, res) {
   var url = [
     'https://www.facebook.com/dialog/oauth',
     '?client_id=' + app.get('facebook-app-id'),
-    '&redirect_uri=' + app.get('redirect-uri') + 'facebook/edit'
+    '&redirect_uri=' + app.get('redirect-uri') + 'facebook/edit',
+    '&scope=email,user_birthday'
   ]
   res.redirect(url.join(''));
 }
@@ -40,16 +41,35 @@ exports.edit = function(req, res) {
       rest.get(url).on('complete', function(data, response) {
         if (response.statusCode == 200) {
           data = JSON.parse(data);
-          var user = db.User.findOne({'_id': req.session.user['_id']}, function(err, user) {
-            user.facebookID = data['id'];
-            user.facebookToken = accessToken.split('=')[1];
-            user.save();
+          var user = db.User.findOne({'facebook.id': data.id}, function(err, user) {
+            if (user) {
+              user.facebook = data;
+              user.email = data.email;
+              user.username = data.username;
+              user.name = data.name;
+              user.save(function() {
+                req.session.user_id = user._id;
+                console.log('user_id', req.session.user_id);
+                res.redirect('/');
+              });
+            } else {
+              user = new db.User({
+                facebook: data,
+                email: data.email,
+                username: data.username,
+                name: data.name
+              });
+              user.save(function() {
+                req.session.user_id = user._id;
+                console.log('user_id', req.session.user_id);
+                res.redirect('/');
+              });
+            }
           });
-            res.redirect('/profile');
-          // });
+        } else {
+          // TODO: return error
         }
       });
     }
   });
-  // res.render('layout');
 }
