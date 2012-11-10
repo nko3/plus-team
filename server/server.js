@@ -30,7 +30,7 @@ app.configure(function() {
   app.set('db-uri', process.env.MONGOHQ_CONNECTION || 'mongodb://localhost/gl-' + app.settings.env);
   app.set('github-client-id', process.env.GITHUB_CLIENT_ID || '');
   app.set('github-client-secret', process.env.GITHUB_CLIENT_SECRET || '');
-  app.set('github-redirect-uri', process.env.GITHUB_REDIRECT_URI || '');
+  app.set('redirect-uri', process.env.REDIRECT_URI || '');
   app.set('facebook-app-id', process.env.FACEBOOK_APP_ID || '');
   app.set('facebook-app-secret', process.env.FACEBOOK_APP_SECRET || '');
   app.set('public-dir', __dirname + '/../public/');

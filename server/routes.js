@@ -10,7 +10,7 @@ exports.attach = function attachRoutes(app) {
   app.resource(indexMapping);
 
   // Enable Auth endpoints.
-  // addController(app, 'facebook');
+  addController(app, 'facebook', null, ['edit']);
   addController(app, 'github', null, ['edit']);
 
   app.all('*', function(req, res) {

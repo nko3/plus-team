@@ -19,7 +19,7 @@ exports.new = function(req, res) {
   var url = [
     'https://github.com/login/oauth/authorize',
     '?client_id=' + app.get('github-client-id'),
-    '&redirect_uri=' + app.get('github-redirect-uri')
+    '&redirect_uri=' + app.get('redirect-uri') + 'github/edit'
   ]
   res.redirect(url.join(''));
 }
@@ -29,7 +29,7 @@ exports.edit = function(req, res) {
   var url = 'https://github.com/login/oauth/access_token';
   var data =  {
     'client_id': app.get('github-client-id'),
-    'redirect_uri': app.get('github-redirect-uri'),
+    'redirect_uri': app.get('redirect-uri') + '/github/edit',
     'code': req.query['code'],
     'client_secret': app.get('github-client-secret')
   };
@@ -58,8 +58,12 @@ exports.edit = function(req, res) {
             } else {
               user = response[0];
             }
-            req.session.user = user['_id'];
-            res.redirect('/');
+            req.session.user = user;
+            if (user['facebookID']) {
+              res.redirect('/');
+            } else {
+              res.redirect('/facebook/new');
+            }
           });
         }
       });
