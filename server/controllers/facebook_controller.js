@@ -49,8 +49,8 @@ exports.edit = function(req, res) {
               user.username = data.username;
               user.name = data.name;
               user.save(function() {
-                req.session.user_id = user._id;
-                res.redirect('/');
+                req.session.user = user;
+                res.redirect('/profile');
               });
             } else {
               user = new db.User({
@@ -61,8 +61,8 @@ exports.edit = function(req, res) {
                 name: data.name
               });
               user.save(function() {
-                req.session.user_id = user._id;
-                res.redirect('/');
+                req.session.user = user;
+                res.redirect('/profile');
               });
             }
           });
