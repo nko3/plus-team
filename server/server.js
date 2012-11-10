@@ -5,6 +5,7 @@ var express = require('express'),
     MongoStore = require('connect-mongo')(express),
     LessMiddleware = require('less-middleware'),
     routing = require('./routes'),
+    models = require('./models'),
     app = express(),
     store = new MongoStore({ db: 'gl-' + app.settings.env }),
     port = process.env.PORT || 8000,
@@ -25,6 +26,7 @@ app.configure(function() {
   app.set('views', __dirname + '/views');
   app.set('view options', { layout: false, pretty: true });
   app.set('basepath', '/');
+  app.set('db', models.db);
   app.set('db-uri', process.env.MONGOHQ_CONNECTION || 'mongodb://localhost/gl-' + app.settings.env);
   app.set('github-client-id', process.env.GITHUB_CLIENT_ID || '');
   app.set('github-client-secret', process.env.GITHUB_CLIENT_SECRET || '');
