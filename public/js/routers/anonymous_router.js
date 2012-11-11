@@ -9,7 +9,7 @@ GL.Routers.Application = GL.Routers.Base.extend({
   },
 
   home: function() {
-    GL.Framework.navigate('login');
+    this.login();
   },
 
   login: function() {

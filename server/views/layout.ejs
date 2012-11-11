@@ -35,22 +35,7 @@
     </header>
 
     <div id="main"></div>
-<% if (!user) { %>
-    <footer class="container">
-      <div class="navbar navbar-inverse navbar-fixed-bottom">
-          <div class="navbar-inner">
-            <div class="container">
-              <a class="brand" href="/" style="margin-left:8px">gitLoved</a>
-              <ul class="nav pull-right">
-                <li class="active"><a href="/">Home</a></li>
-                <li><a href="/about">About Us</a></li>
-                <li><a href="/terms">Terms &amp; Conditions</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-    </footer>
-<% } %>
+    <% include footer %>
   </body>
   <% include views %>
   <% include scripts %>
