@@ -42,13 +42,17 @@ exports.likes = function(req, res) {
 }
 
 exports.users = function(req, res) {
-  console.log('API:USER');
-  var user = req.session.user;
-  var data = {
-    name: user.name,
-    facebook: user.facebook,
-    github: user.github,
-    instagram: user.instagram
-  };
-  return res.send(data);
+  console.log('API:USERS');
+  var data = [];
+  db.User.find(function(err, users) {
+    users.forEach(function(user) {
+      data.push({
+        name: user.name,
+        facebook: user.facebook,
+        github: user.github,
+        instagram: user.instagram
+      });
+    });
+    return res.send(data);
+  })
 }
