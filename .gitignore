@@ -1,3 +1,4 @@
 node_modules
 *.css
 .env
+.DS_Store

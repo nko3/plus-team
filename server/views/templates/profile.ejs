@@ -22,7 +22,7 @@
 
     <div class="navigation hidden-phone">
         <div class="navigation-left">
-            
+
         </div>
         <div class="navigation-right">
 
@@ -58,7 +58,7 @@
 			                </div>
 			            </div>
 		            </div>
-	                
+
 	            </div>
 	        </div>
 
@@ -66,17 +66,15 @@
         <div class="row">
             <div class="span6">
 				<div class="entry-header">
-                    left brain
-                </div>
 
-
-                <div class="user-content dark">
-                	<div class="login-div">
-	                	<a class="btn btn-large btn-primary" href="/github/new">Click to connect to GitHub
-	                	</a>
-	                </div>
-                </div>
-
+<% if (githubConnected) { %>
+        <div class="user-content dark">
+          <div class="login-div">
+            <a class="btn btn-large btn-primary">Click to connect to GitHub
+            </a>
+          </div>
+        </div>
+<% } %>
 
 				<div class="user-content">
 	                <div class="statistics">
@@ -215,26 +213,15 @@
                     </div>
                 </div>
 
-
-
-
+<% if (!instagramConnected) { %>
                 <div class="user-content dark">
                 	<div class="login-div">
 	                	<a class="btn btn-large btn-primary" href="/instagram/new">Click to connect to Instagram
 	                	</a>
 	                </div>
                 </div>
-
-                <div class="user-content dark">
-                	<div class="login-div">
-	                	<a class="btn btn-large btn-primary" href="/facebook/new">Click to connect to Facebook
-	                	</a>
-	                </div>
-                </div>
-
+<% } %>
             </div>
-
         </div>
     </div>
-
 </script>

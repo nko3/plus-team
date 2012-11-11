@@ -49,7 +49,10 @@ app.configure(function() {
   app.use(LessMiddleware({ src: app.get('public-dir'), compress: true }));
   app.use(express.static(app.get('public-dir')));
   app.use(function(req, res, next) {
+    console.log(req.session.user);
     res.locals.user = req.session.user;
+    res.locals.instagramConnected = req.session.user && req.session.user.instagram;
+    res.locals.githubConnected = req.session.user && req.session.user.github;
     next();
   });
 });
