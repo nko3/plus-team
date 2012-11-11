@@ -3,8 +3,7 @@
     <header class="container">
         <div class="navbar navbar-inverse">
           <div class="navbar-inner">
-            <a class="pull-right" href="#"><img src="img/logo-sm.png" class="logo hidden-phone" /></a>
-            <!-- <a class="pull-left" href="#"><img src="img/me_64.jpg" class="user-image" \></a> -->
+            <a class="pull-left" href="/"><img src="img/logo-sm.png" class="logo hidden-phone" /></a>
             <ul class="nav">
                 <li class="menu-item active"><a href="#">Home</a></li>
                 <li class="menu-item"><a href="#">fork'd <span class="badge">5</span></a></li>
@@ -13,9 +12,10 @@
             </ul>
             <form class="navbar-form pull-left">
               <input type="text" class="span2">
-              <button type="submit" class="btn-primary btn">Submit</button>
+              <!-- <button type="submit" class="btn-primary btn">Submit</button> -->
+              <a href="/searchUsers" class="btn">Search Users</a>
             </form>
-            <a href="/logout/" class="btn">logout</a>
+            <a href="/logout/" class="pull-right">logout</a>
           </div>
         </div>
     </header>
@@ -72,7 +72,7 @@
 
                 <div class="user-content dark">
                 	<div class="login-div">
-	                	<a class="btn btn-large btn-primary">Click to connect to GitHub
+	                	<a class="btn btn-large btn-primary" href="/github/new">Click to connect to GitHub
 	                	</a>
 	                </div>
                 </div>
@@ -220,14 +220,14 @@
 
                 <div class="user-content dark">
                 	<div class="login-div">
-	                	<a class="btn btn-large btn-primary">Click to connect to Instagram
+	                	<a class="btn btn-large btn-primary" href="/instagram/new">Click to connect to Instagram
 	                	</a>
 	                </div>
                 </div>
 
                 <div class="user-content dark">
                 	<div class="login-div">
-	                	<a class="btn btn-large btn-primary">Click to connect to Facebook
+	                	<a class="btn btn-large btn-primary" href="/facebook/new">Click to connect to Facebook
 	                	</a>
 	                </div>
                 </div>
