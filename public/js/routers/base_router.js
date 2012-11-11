@@ -1,5 +1,7 @@
 GL.Routers.Base = GL.Framework.Router.extend({
   routes: {
+    'about':'about',
+    'terms':'terms',
     '*actions': 'notfound'
   },
 
@@ -10,5 +12,11 @@ GL.Routers.Base = GL.Framework.Router.extend({
 
   notfound: function() {
     GL.Framework.RegionManager.show(new GL.Views.NotFound());
+  },
+  about: function() {
+    GL.Framework.RegionManager.show(new GL.Views.AboutUs());
+  },
+  terms: function() {
+    GL.Framework.RegionManager.show(new GL.Views.TermsConditions());
   }
 });
