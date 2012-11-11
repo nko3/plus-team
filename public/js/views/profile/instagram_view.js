@@ -14,7 +14,9 @@ GL.Views.Instagram = GL.Framework.View.extend({
   },
 
   renderData: function() {
-    $(this.el).html(this._template());
+    var json = this._photos.toJSON();
+    $(this.el).html(this._template({data: json}));
+    GL.Events.trigger(GL.Constants.INSTAGRAM_DATA_RECEIVED_EVENT, json);
     return this;
   }
 });
