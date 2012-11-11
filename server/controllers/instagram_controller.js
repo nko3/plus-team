@@ -41,6 +41,7 @@ exports.edit = function(req, res) {
         user.instagram = data.user;
         user.instagramAccessToken = data.access_token;
         user.save(function() {
+          req.session.user = user;
           res.redirect('/');
         });
       });

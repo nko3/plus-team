@@ -43,6 +43,7 @@ exports.edit = function(req, res) {
             user.github = data;
             user.githubAccessToken = accessToken.split('=')[1];
             user.save(function() {
+              req.session.user = user;
               res.redirect('/');
             });
           });
