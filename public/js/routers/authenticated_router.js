@@ -1,7 +1,8 @@
 GL.Routers.Application = GL.Routers.Base.extend({
   appRoutes: {
     '': 'home',
-    'profile': 'profile'
+    'profile': 'profile',
+    'searchUsers': 'searchUsers'
   },
 
   initialize: function() {
@@ -14,6 +15,9 @@ GL.Routers.Application = GL.Routers.Base.extend({
 
   profile: function() {
     GL.Framework.RegionManager.show(new GL.Views.Profile());
+  },
+  searchUsers: function() {
+    GL.Framework.RegionManager.show(new GL.Views.SearchUsers());
   }
 
 })
