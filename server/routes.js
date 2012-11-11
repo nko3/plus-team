@@ -13,6 +13,7 @@ exports.attach = function attachRoutes(app) {
   addController(app, 'facebook', null, ['edit']);
   addController(app, 'github', null, ['edit']);
   addController(app, 'instagram', null, ['edit']);
+  addController(app, 'api', null, ['photos', 'commits']);
   addController(app, 'logout');
 
   app.all('*', function(req, res) {
