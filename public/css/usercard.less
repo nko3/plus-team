@@ -2,6 +2,13 @@
 	.card;
 }
 
+#userInfo {
+	clear: both;
+}
+#userContent {
+	margin-top:32px;
+}
+
 img.user-image {
 	.rounded-corners(10px);
 	.box-shadow(0 0 8px, 50%);
@@ -38,18 +45,6 @@ hr.user-divider {
 	margin-bottom:8px;
 }
 
-.user-content {
-	background:#eee;
-	clear:both;
-	min-height:160px;
-	box-shadow:2px 2px 4px #C5C5C5;
-}
-.user-content.dark {
-	background:rgba(0,0,0,.5);
-	color:#fff;
-	text-shadow:1px 1px 1px #000;
-}
-
 #user-status {
 	min-height: 124px;
 	padding:12px;
@@ -76,44 +71,6 @@ hr.user-divider {
 #sprite_ping.checked {
 	background-position:0 20px;
 }
-
-
-/* ------ statistics ------ */
-.statistics {
-	margin:6px;
-}
-ul.stat-list {
-	list-style: none;
-	margin:4px;
-}
-ul.stat-list li {
-	border-top:2px solid #aaa;
-	padding:4px;
-	margin-bottom:4px;
-	font:normal 1.4em/1.2 Arial, sans-serif;
-	clear:both;
-	display:block;
-}
-
-ul.stat-list li div.circle {
-	background: #aaa;
-	width: 42px;
-	height: 42px;
-	border-radius: 42px;
-	display: table-cell;
-	vertical-align: middle;
-	text-align: center;
-	color:#fff;
-}
-ul.stat-list li div.menu-item {
-	line-height: 44px;
-	float: left;
-	margin-left: 8px;
-}
-ul.stat-list li:first-child {
-	border-top:none;
-}
-
 .login-div {
 	text-align: center;
 	width: 100%;

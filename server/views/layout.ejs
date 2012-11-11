@@ -8,33 +8,10 @@
   </head>
   <body>
 
-    <header class="container">
-        <div class="navbar navbar-inverse">
-          <div class="navbar-inner" style="min-height:72px">
-            <a class="pull-left" href="/"><img src="img/logo-sm.png" class="logo hidden-phone" /></a>
-
-
-<% if (!user) { %>
-            <a class="btn-primary btn pull-right" href="/facebook/new" style="margin-top:22px">Login with Facebook</a>
-<% } else { %>
-            <ul class="nav">
-                <li class="menu-item active"><a href="#">Home</a></li>
-                <li class="menu-item"><a href="#">fork'd <span class="badge">5</span></a></li>
-                <li class="menu-item"><a href="#">pull'd <span class="badge">53</span></a></li>
-                <li class="menu-item"><a href="#">push'd <span class="badge">201</span></a></li>
-            </ul>
-            <form class="navbar-form pull-left" style="margin-top:18px">
-              <input type="text" class="span2">
-              <!-- <button type="submit" class="btn-primary btn">Submit</button> -->
-              <a href="/searchUsers" class="btn">Search Users</a>
-            </form>
-            <a href="/logout/" class="btn btn-primary pull-right" style="margin-top:22px;">logout</a>
-<% } %>
-          </div>
-        </div>
-    </header>
+    <% include header %>
 
     <div id="main"></div>
+    
     <% include footer %>
   </body>
   <% include views %>

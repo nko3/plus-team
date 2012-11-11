@@ -10,11 +10,27 @@
 <% } %>
 
     <div class="container">
-    	<div class="row">
+    	<div class="row" id="userInfo">
     		<div class="span12">
 	    		<div class="user-card">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	                <div class="container">
 		                <div class="row-fluid">
+
+
 		                	<div class="span6">
 		                		<div class="user-info">
 					                <div class="user-image pull-left">
@@ -28,9 +44,11 @@
 					                </div>
 					            </div>
 				            </div>
+
+
 				            <div class="span6">
 				                <div id="user-status">
-                                    <h2 class="graph-title">How well do you rate?</h2>
+                                    <h2 class="graph-title">Your Personality Score</h2>
                                     <ul id="user-graph-container">
                                         <li>
                                             <div class="graph-cat">Geekyness</div>
@@ -53,16 +71,20 @@
                                     </ul>
 				                </div>
 			                </div>
+
+
 			            </div>
 		            </div>
 
-	            </div>
-	        </div>
 
-    	</div>
-        <div class="row">
+                    <div class="container">
+
+
+
+
+        <div class="row" id="userContent">
             <div class="span6">
-				<div class="entry-header">
+                <div class="entry-header">
                     left brain
                 </div>
 
@@ -76,58 +98,76 @@
 <% } else { %>
  
                 <div class="user-content">
-                    <div class="statistics">
-                        <ul class="stat-list">
-                            <li>
-                                <a href="#">
-                                    <div class="pull-left">
-                                        <div class="circle">109</div>
-                                    </div>
-                                    <div class="menu-item">Commits</div>
-                                    <div class="clearfix"></div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div class="pull-left">
-                                        <div class="circle">2</div>
-                                    </div>
-                                    <div class="menu-item">Repos</div>
-                                    <div class="clearfix"></div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div id="entry-collection">
-                        <div class="entry-node">
-                            <div class="entry-type-image"></div>
-                            <div class="entry-content">
-                                <span class="author">Rayan Bouajram</span> likes <span class="subject">Joyent</span>
-                            </div>
-                        </div>
-                        <div class="entry-node">
-                            <div class="entry-type-image"></div>
-                            <div class="entry-content">
-                                content feed
-                            </div>
+                    <div class="service">
 
+                        <div class="service-head">
+                            Powered by GitHub
                         </div>
-                        <div class="entry-node">
-                            <div class="entry-type-image"></div>
-                            <div class="entry-content">
-                                content feed
+                        <div class="service-body">
+
+                            <div class="statistics">
+                                <ul class="stat-list">
+                                    <li>
+                                        <a href="#">
+                                            <div class="pull-left">
+                                                <div class="circle">109</div>
+                                            </div>
+                                            <div class="menu-item">Commits</div>
+                                            <div class="clearfix"></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="pull-left">
+                                                <div class="circle">2</div>
+                                            </div>
+                                            <div class="menu-item">Repos</div>
+                                            <div class="clearfix"></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="pull-left">
+                                                <div class="circle">4</div>
+                                            </div>
+                                            <div class="menu-item">Forks</div>
+                                            <div class="clearfix"></div>
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
-                        </div>
-                        <div class="entry-node">
-                            <div class="entry-type-image"></div>
-                            <div class="entry-content">
-                                content feed
-                            </div>
-                        </div>
-                        <div class="entry-node">
-                            <div class="entry-type-image"></div>
-                            <div class="entry-content">
-                                content feed
+                            <div id="entry-collection">
+                                <div class="entry-node">
+                                    <div class="entry-type-image"></div>
+                                    <div class="entry-content">
+                                        <span class="author">Rayan Bouajram</span> likes <span class="subject">Joyent</span>
+                                    </div>
+                                </div>
+                                <div class="entry-node">
+                                    <div class="entry-type-image"></div>
+                                    <div class="entry-content">
+                                        content feed
+                                    </div>
+
+                                </div>
+                                <div class="entry-node">
+                                    <div class="entry-type-image"></div>
+                                    <div class="entry-content">
+                                        content feed
+                                    </div>
+                                </div>
+                                <div class="entry-node">
+                                    <div class="entry-type-image"></div>
+                                    <div class="entry-content">
+                                        content feed
+                                    </div>
+                                </div>
+                                <div class="entry-node">
+                                    <div class="entry-type-image"></div>
+                                    <div class="entry-content">
+                                        content feed
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -141,39 +181,47 @@
                     </div>
                 <div class="user-content">
 
-                    <div id="entry-collection">
-                        <div class="entry-node">
-                            <div class="entry-type-image"></div>
-                            <div class="entry-content">
-                                <span class="author">Rayan Bouajram</span> likes <span class="subject">Joyent</span>
-                            </div>
+                    <div class="service">
+
+                        <div class="service-head">
+                            Powered by Facebook
                         </div>
-                        <div class="entry-node">
-                            <div class="entry-type-image"></div>
-                            <div class="entry-content">
-                                content feed
+                        <div class="service-body">
+
+                        <div id="entry-collection">
+                            <div class="entry-node">
+                                <div class="entry-type-image"></div>
+                                <div class="entry-content">
+                                    <span class="author">Rayan Bouajram</span> likes <span class="subject">Joyent</span>
+                                </div>
+                            </div>
+                            <div class="entry-node">
+                                <div class="entry-type-image"></div>
+                                <div class="entry-content">
+                                    content feed
+                                </div>
+
+                            </div>
+                            <div class="entry-node">
+                                <div class="entry-type-image"></div>
+                                <div class="entry-content">
+                                    content feed
+                                </div>
+                            </div>
+                            <div class="entry-node">
+                                <div class="entry-type-image"></div>
+                                <div class="entry-content">
+                                    content feed
+                                </div>
+                            </div>
+                            <div class="entry-node">
+                                <div class="entry-type-image"></div>
+                                <div class="entry-content">
+                                    content feed
+                                </div>
                             </div>
 
                         </div>
-                        <div class="entry-node">
-                            <div class="entry-type-image"></div>
-                            <div class="entry-content">
-                                content feed
-                            </div>
-                        </div>
-                        <div class="entry-node">
-                            <div class="entry-type-image"></div>
-                            <div class="entry-content">
-                                content feed
-                            </div>
-                        </div>
-                        <div class="entry-node">
-                            <div class="entry-type-image"></div>
-                            <div class="entry-content">
-                                content feed
-                            </div>
-                        </div>
-
                     </div>
                 </div>
 
@@ -181,43 +229,51 @@
 
 <% if (!instagramConnected) { %>
                 <div class="user-content dark">
-                	<div class="login-div">
-	                	<a class="btn btn-large btn-primary" href="/instagram/new">Click to connect to Instagram
-	                	</a>
-	                </div>
+                    <div class="login-div">
+                        <a class="btn btn-large btn-primary" href="/instagram/new">Click to connect to Instagram
+                        </a>
+                    </div>
                 </div>
 <% } else { %>
                 <div class="user-content">
-                    <div id="gallery-collection">
-                        <div class="gallery-node">
-                            <div class="gallery-type-image"></div>
-                            <div class="gallery-content">
-                                <span class="author">Rayan Bouajram</span> likes <span class="subject">Joyent</span>
-                            </div>
-                        </div>
-                        <div class="gallery-node">
-                            <div class="gallery-type-image"></div>
-                            <div class="gallery-content">
-                                content feed
-                            </div>
+                    <div class="service">
 
+                        <div class="service-head">
+                            Powered by Instagram
                         </div>
-                        <div class="gallery-node">
-                            <div class="gallery-type-image"></div>
-                            <div class="gallery-content">
-                                content feed
+                        <div class="service-body">
+
+                        <div id="gallery-collection">
+                            <div class="gallery-node">
+                                <div class="gallery-type-image"></div>
+                                <div class="gallery-content">
+                                    <span class="author">Rayan Bouajram</span> likes <span class="subject">Joyent</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="gallery-node">
-                            <div class="gallery-type-image"></div>
-                            <div class="gallery-content">
-                                content feed
+                            <div class="gallery-node">
+                                <div class="gallery-type-image"></div>
+                                <div class="gallery-content">
+                                    content feed
+                                </div>
+
                             </div>
-                        </div>
-                        <div class="gallery-node">
-                            <div class="gallery-type-image"></div>
-                            <div class="gallery-content">
-                                content feed
+                            <div class="gallery-node">
+                                <div class="gallery-type-image"></div>
+                                <div class="gallery-content">
+                                    content feed
+                                </div>
+                            </div>
+                            <div class="gallery-node">
+                                <div class="gallery-type-image"></div>
+                                <div class="gallery-content">
+                                    content feed
+                                </div>
+                            </div>
+                            <div class="gallery-node">
+                                <div class="gallery-type-image"></div>
+                                <div class="gallery-content">
+                                    content feed
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -226,5 +282,18 @@
 <% } %>
             </div>
         </div>
+
+
+
+
+
+                    </div>
+
+	            </div>
+	        </div>
+    	</div>
+
+
+
     </div>
 </script>
