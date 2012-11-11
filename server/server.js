@@ -4,14 +4,17 @@ var express = require('express'),
     parseCookie = connect.utils.parseCookie,
     MongoStore = require('connect-mongo')(express),
     LessMiddleware = require('less-middleware'),
+    http = require('http'),
     routing = require('./routes'),
     models = require('./models'),
+    sockets = require('./socket'),
     app = express(),
     store = new MongoStore({ db: 'gl-' + app.settings.env }),
     port = process.env.PORT || 8000,
     _ = require('underscore')._,
     OAuth = require('oauth').OAuth,
-    querystring = require('querystring');
+    querystring = require('querystring'),
+    events = require('../public/js/constants/events');
 
 // Setup the session token.
 var expressSession = express.session({
@@ -28,6 +31,8 @@ app.configure(function() {
   app.set('basepath', '/');
   app.set('db', models.db);
   app.set('db-uri', process.env.MONGOHQ_CONNECTION || 'mongodb://localhost/gl-' + app.settings.env);
+  app.set('store', store);
+  app.set('events', events);
   app.set('github-client-id', process.env.GITHUB_CLIENT_ID || '');
   app.set('github-client-secret', process.env.GITHUB_CLIENT_SECRET || '');
   app.set('instagram-client-id', process.env.INSTAGRAM_CLIENT_ID || '');
@@ -41,8 +46,8 @@ app.configure(function() {
   app.use(express.bodyParser());
   app.use(express.cookieParser());
   app.use(expressSession);
-  app.use(LessMiddleware({ src: app.set('public-dir'), compress: true }));
-  app.use(express.static(app.set('public-dir')));
+  app.use(LessMiddleware({ src: app.get('public-dir'), compress: true }));
+  app.use(express.static(app.get('public-dir')));
   app.use(function(req, res, next) {
     res.locals.user = req.session.user;
     next();
@@ -50,15 +55,21 @@ app.configure(function() {
 });
 
 // Connect to mongoose.
-mongoose.connect(app.set('db-uri'), function(error) {
+mongoose.connect(app.get('db-uri'), function(error) {
   if (error) console.error('MongoDB is not running', error);
 });
+
+// For Socket.IO compatibility
+var server = http.createServer(app);
 
 // Express routing.
 routing.attach(app);
 
+// Enable websockets.
+sockets.attach(server, app);
+
 // Start listening the http server.
-app.listen(port, function() {
+server.listen(port, function() {
   console.log('Server running on ' + app.settings.env + ' port ' + port);
 });
 
