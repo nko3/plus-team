@@ -3,11 +3,11 @@ GL.Views.UserCard = GL.Framework.View.extend({
 
   initialize: function(options) {
     console.log('profileUserCard', options);
-    // this._template = GL.Framework.template('UserCard');
-
+    this._template = GL.Framework.template('UserCard');
+    this.render();
   },
   
   render: function() {
-    // this.$el.
+    this.$el.html(this._template(this.model));
   }
 })

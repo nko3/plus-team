@@ -25,9 +25,9 @@ GL.Views.Profile = GL.Framework.View.extend({
     if (jsonModel.facebook) {
       this.facebookView = new GL.Views.Facebook({model: idModel});
     }
-    if (jsonModel.github) {
-      this.githubView = new GL.Views.Github({model: idModel});
-    }
+    // if (jsonModel.github) {
+    //   this.githubView = new GL.Views.Github({model: idModel});
+    // }
     if (jsonModel.instagram) {
       this.instagramView = new GL.Views.Instagram({model: idModel});
     }
