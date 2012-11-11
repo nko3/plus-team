@@ -4,9 +4,11 @@
  * @author Mohamed Mansour 2012 (http://mohamedmansour.com)
  */
 
- _.templateSettings = {
-   interpolate : /\<\<(.+?)\>\>/g
- };
+_.templateSettings = {
+    interpolate: /\<\@\=(.+?)\@\>/gim,
+    evaluate: /\<\@(.+?)\@\>/gim,
+    escape: /\<\@\-(.+?)\@\>/gim
+};
 
 /**
  * Extends the view so we can have onClose and onOpen events.
