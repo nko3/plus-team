@@ -4,6 +4,10 @@
  * @author Mohamed Mansour 2012 (http://mohamedmansour.com)
  */
 
+ _.templateSettings = {
+   interpolate : /\{\{(.+?)\}\}/g
+ };
+
 /**
  * Extends the view so we can have onClose and onOpen events.
  */
