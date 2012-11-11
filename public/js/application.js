@@ -7,7 +7,11 @@ var GL = {
   Routers: {},
   Utils: {},
   Events: {},
-  Constants: {},
+  Constants: {
+    FACEBOOK_DATA_RECEIVED_EVENT: 'FACEBOOK_DATA_RECEIVED',
+    INSTAGRAM_DATA_RECEIVED_EVENT: 'INSTAGRAM_DATA_RECEIVED',
+    GITHUB_DATA_RECEIVED_EVENT: 'GITHUB_DATA_RECEIVED'
+  },
   init: function() {
     new GL.Routers.Application();
   }
