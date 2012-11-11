@@ -41,7 +41,7 @@ exports.edit = function(req, res) {
       rest.get(url).on('complete', function(data, response) {
         if (response.statusCode == 200) {
           data = JSON.parse(data);
-          var user = db.User.findOne({'facebook.id': data.id}, function(err, user) {
+          db.User.findOne({'facebook.id': data.id}, function(err, user) {
             if (user) {
               user.facebook = data;
               user.facebookAccessToken = accessToken.split('=')[1];

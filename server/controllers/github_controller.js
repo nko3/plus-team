@@ -39,7 +39,7 @@ exports.edit = function(req, res) {
       var url = 'https://api.github.com/user?' + accessToken;
       rest.get(url).on('complete', function(data, response) {
         if (response.statusCode == 200) {
-          var user = db.User.findOne({ _id: req.session.user_id }, function(err, user) {
+          db.User.findOne({ _id: req.session.user._id }, function(err, user) {
             user.github = data;
             user.githubAccessToken = accessToken.split('=')[1];
             user.save(function() {

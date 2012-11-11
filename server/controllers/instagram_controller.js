@@ -37,7 +37,7 @@ exports.edit = function(req, res) {
   };
   rest.post(url, { data: data }).on('complete', function(data, response) {
     if (response.statusCode == 200) {
-      var user = db.User.findOne({ _id: req.session.user_id }, function(err, user) {
+      db.User.findOne({ _id: req.session.user._id }, function(err, user) {
         user.instagram = data.user;
         user.instagramAccessToken = data.access_token;
         user.save(function() {
