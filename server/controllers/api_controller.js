@@ -47,6 +47,7 @@ exports.users = function(req, res) {
   db.User.find(function(err, users) {
     users.forEach(function(user) {
       data.push({
+        id: user._id,
         name: user.name,
         facebook: user.facebook,
         github: user.github,
