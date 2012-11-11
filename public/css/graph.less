@@ -1,13 +1,29 @@
 /* --- graph.less --- */
 
 
-junk {
-	height: 128px;
-	width: 128px;
-	border-radius: 256px;
+ul#user-graph-container {
+	list-style:none;
+}
+ul#user-graph-container li { }
+ul#user-graph-container li .graph-cat { }
+ul#user-graph-container li .graph { }
+
+.graph-title {
+	font:bold 2em "Rokkitt", Arial, sans-serif;
+	text-align:center;
 }
 
-.graph {
+.graph-cat {
+	font:bold 1.3em 'Rokkitt', Arial, sans-serif;
+	float:left;
+	width:88px;
+}
+.graph-bar {
+	float:left;
+	width:80%;
+}
+
+.graph-data {
 	clear:both;
 	display: block;
 	height:24px;
@@ -20,8 +36,8 @@ junk {
 	margin-bottom:6px;
 }
 
-.graph.orange { background:#EC992E; }
-.graph.blue { background:#3C35D8; }
-.graph.red { background:#D83535; }
-.graph.green { background:#D83535; }
-.graph.yellow { background:#DAD100; }
+.graph-data.orange { background:#EC992E; }
+.graph-data.blue { background:#3C35D8; }
+.graph-data.red { background:#D83535; }
+.graph-data.green { background:#D83535; }
+.graph-data.yellow { background:#DAD100; }
