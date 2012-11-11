@@ -19,15 +19,16 @@ GL.Views.Profile = GL.Framework.View.extend({
     var jsonModel = this.model.toJSON();
     $(this.el).html(this._template(jsonModel));
     this.userCardView = new GL.Views.UserCard({model: jsonModel});
+    this.userStatusView = new GL.Views.UserStatus({model: jsonModel});
 
 
     var idModel = { id: jsonModel.id };
     if (jsonModel.facebook) {
       this.facebookView = new GL.Views.Facebook({model: idModel});
     }
-    // if (jsonModel.github) {
-    //   this.githubView = new GL.Views.Github({model: idModel});
-    // }
+    if (jsonModel.github) {
+      this.githubView = new GL.Views.Github({model: idModel});
+    }
     if (jsonModel.instagram) {
       this.instagramView = new GL.Views.Instagram({model: idModel});
     }

@@ -10,4 +10,4 @@ GL.Views.UserCard = GL.Framework.View.extend({
   render: function() {
     this.$el.html(this._template(this.model));
   }
-})
+});
