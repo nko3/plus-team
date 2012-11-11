@@ -9,21 +9,10 @@
     </div>
 <% } %>
 
-    <div class="container">
+    <div class="container" id="mainlayout">
     	<div class="row" id="userInfo">
     		<div class="span12">
 	    		<div class="user-card">
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -87,199 +76,17 @@
                 <div class="entry-header">
                     left brain
                 </div>
-
-
-<% if (!githubConnected) { %>
-        <div class="user-content dark">
-          <div class="login-div">
-            <a class="btn btn-large btn-primary" href="/github/new">Click to connect to GitHub</a>
-          </div>
-        </div>
-<% } else { %>
- 
-                <div class="user-content">
-                    <div class="service">
-
-                        <div class="service-head">
-                            Powered by GitHub
-                        </div>
-                        <div class="service-body">
-
-                            <div class="statistics">
-                                <ul class="stat-list">
-                                    <li>
-                                        <a href="#">
-                                            <div class="pull-left">
-                                                <div class="circle">109</div>
-                                            </div>
-                                            <div class="menu-item">Commits</div>
-                                            <div class="clearfix"></div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <div class="pull-left">
-                                                <div class="circle">2</div>
-                                            </div>
-                                            <div class="menu-item">Repos</div>
-                                            <div class="clearfix"></div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <div class="pull-left">
-                                                <div class="circle">4</div>
-                                            </div>
-                                            <div class="menu-item">Forks</div>
-                                            <div class="clearfix"></div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div id="entry-collection">
-                                <div class="entry-node">
-                                    <div class="entry-type-image"></div>
-                                    <div class="entry-content">
-                                        <span class="author">Rayan Bouajram</span> likes <span class="subject">Joyent</span>
-                                    </div>
-                                </div>
-                                <div class="entry-node">
-                                    <div class="entry-type-image"></div>
-                                    <div class="entry-content">
-                                        content feed
-                                    </div>
-
-                                </div>
-                                <div class="entry-node">
-                                    <div class="entry-type-image"></div>
-                                    <div class="entry-content">
-                                        content feed
-                                    </div>
-                                </div>
-                                <div class="entry-node">
-                                    <div class="entry-type-image"></div>
-                                    <div class="entry-content">
-                                        content feed
-                                    </div>
-                                </div>
-                                <div class="entry-node">
-                                    <div class="entry-type-image"></div>
-                                    <div class="entry-content">
-                                        content feed
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-<% } %>
+                <% include mod_github %>
             </div>
 
             <div class="span6">
-                    <div class="entry-header">
+                <div class="entry-header">
+                    <div class="pull-right">
                         right brain
                     </div>
-                <div class="user-content">
-
-                    <div class="service">
-
-                        <div class="service-head">
-                            Powered by Facebook
-                        </div>
-                        <div class="service-body">
-
-                        <div id="entry-collection">
-                            <div class="entry-node">
-                                <div class="entry-type-image"></div>
-                                <div class="entry-content">
-                                    <span class="author">Rayan Bouajram</span> likes <span class="subject">Joyent</span>
-                                </div>
-                            </div>
-                            <div class="entry-node">
-                                <div class="entry-type-image"></div>
-                                <div class="entry-content">
-                                    content feed
-                                </div>
-
-                            </div>
-                            <div class="entry-node">
-                                <div class="entry-type-image"></div>
-                                <div class="entry-content">
-                                    content feed
-                                </div>
-                            </div>
-                            <div class="entry-node">
-                                <div class="entry-type-image"></div>
-                                <div class="entry-content">
-                                    content feed
-                                </div>
-                            </div>
-                            <div class="entry-node">
-                                <div class="entry-type-image"></div>
-                                <div class="entry-content">
-                                    content feed
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
                 </div>
-
-
-
-<% if (!instagramConnected) { %>
-                <div class="user-content dark">
-                    <div class="login-div">
-                        <a class="btn btn-large btn-primary" href="/instagram/new">Click to connect to Instagram
-                        </a>
-                    </div>
-                </div>
-<% } else { %>
-                <div class="user-content">
-                    <div class="service">
-
-                        <div class="service-head">
-                            Powered by Instagram
-                        </div>
-                        <div class="service-body">
-
-                        <div id="gallery-collection">
-                            <div class="gallery-node">
-                                <div class="gallery-type-image"></div>
-                                <div class="gallery-content">
-                                    <span class="author">Rayan Bouajram</span> likes <span class="subject">Joyent</span>
-                                </div>
-                            </div>
-                            <div class="gallery-node">
-                                <div class="gallery-type-image"></div>
-                                <div class="gallery-content">
-                                    content feed
-                                </div>
-
-                            </div>
-                            <div class="gallery-node">
-                                <div class="gallery-type-image"></div>
-                                <div class="gallery-content">
-                                    content feed
-                                </div>
-                            </div>
-                            <div class="gallery-node">
-                                <div class="gallery-type-image"></div>
-                                <div class="gallery-content">
-                                    content feed
-                                </div>
-                            </div>
-                            <div class="gallery-node">
-                                <div class="gallery-type-image"></div>
-                                <div class="gallery-content">
-                                    content feed
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-<% } %>
+                <% include mod_facebook %>
+                <% include mod_instagram %>
             </div>
         </div>
 

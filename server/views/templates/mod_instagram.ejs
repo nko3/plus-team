@@ -1,0 +1,57 @@
+<script type="type/ejs" id="templateInstagram">
+
+<% if (!instagramConnected) { %>
+                <div class="user-content dark">
+                    <div class="login-div">
+                        <a class="btn btn-large btn-primary" href="/instagram/new">Click to connect to Instagram
+                        </a>
+                    </div>
+                </div>
+<% } else { %>
+                <div class="user-content">
+                    <div class="service">
+
+                        <div class="service-head">
+                            Powered by Instagram
+                        </div>
+                        <div class="service-body">
+
+                        <div id="gallery-collection">
+                            <div class="gallery-node">
+                                <div class="gallery-type-image"></div>
+                                <div class="gallery-content">
+                                    <span class="author">Rayan Bouajram</span> likes <span class="subject">Joyent</span>
+                                </div>
+                            </div>
+                            <div class="gallery-node">
+                                <div class="gallery-type-image"></div>
+                                <div class="gallery-content">
+                                    content feed
+                                </div>
+
+                            </div>
+                            <div class="gallery-node">
+                                <div class="gallery-type-image"></div>
+                                <div class="gallery-content">
+                                    content feed
+                                </div>
+                            </div>
+                            <div class="gallery-node">
+                                <div class="gallery-type-image"></div>
+                                <div class="gallery-content">
+                                    content feed
+                                </div>
+                            </div>
+                            <div class="gallery-node">
+                                <div class="gallery-type-image"></div>
+                                <div class="gallery-content">
+                                    content feed
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+<% } %>
+
+</script>

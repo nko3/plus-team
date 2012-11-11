@@ -1,0 +1,88 @@
+<script type="type/ejs" id="templateGithub">
+
+<% if (!githubConnected) { %>
+        <div class="user-content dark">
+          <div class="login-div">
+            <a class="btn btn-large btn-primary" href="/github/new">Click to connect to GitHub</a>
+          </div>
+        </div>
+<% } else { %>
+ 
+                <div class="user-content">
+                    <div class="service">
+
+                        <div class="service-head">
+                            Powered by GitHub
+                        </div>
+                        <div class="service-body">
+
+                            <div class="statistics">
+                                <ul class="stat-list">
+                                    <li>
+                                        <a href="#">
+                                            <div class="pull-left">
+                                                <div class="circle">109</div>
+                                            </div>
+                                            <div class="menu-item">Commits</div>
+                                            <div class="clearfix"></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="pull-left">
+                                                <div class="circle">2</div>
+                                            </div>
+                                            <div class="menu-item">Repos</div>
+                                            <div class="clearfix"></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="pull-left">
+                                                <div class="circle">4</div>
+                                            </div>
+                                            <div class="menu-item">Forks</div>
+                                            <div class="clearfix"></div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div id="entry-collection">
+                                <div class="entry-node">
+                                    <div class="entry-type-image"></div>
+                                    <div class="entry-content">
+                                        <span class="author">Rayan Bouajram</span> likes <span class="subject">Joyent</span>
+                                    </div>
+                                </div>
+                                <div class="entry-node">
+                                    <div class="entry-type-image"></div>
+                                    <div class="entry-content">
+                                        content feed
+                                    </div>
+
+                                </div>
+                                <div class="entry-node">
+                                    <div class="entry-type-image"></div>
+                                    <div class="entry-content">
+                                        content feed
+                                    </div>
+                                </div>
+                                <div class="entry-node">
+                                    <div class="entry-type-image"></div>
+                                    <div class="entry-content">
+                                        content feed
+                                    </div>
+                                </div>
+                                <div class="entry-node">
+                                    <div class="entry-type-image"></div>
+                                    <div class="entry-content">
+                                        content feed
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<% } %>
+
+</script>
