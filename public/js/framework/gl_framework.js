@@ -5,7 +5,7 @@
  */
 
  _.templateSettings = {
-   interpolate : /\{\{(.+?)\}\}/g
+   interpolate : /\<\<(.+?)\>\>/g
  };
 
 /**
