@@ -66,39 +66,41 @@
         <div class="row">
             <div class="span6">
 				<div class="entry-header">
+                    left brain
+                </div>
 
-<% if (githubConnected) { %>
+
+<% if (!githubConnected) { %>
         <div class="user-content dark">
           <div class="login-div">
-            <a class="btn btn-large btn-primary">Click to connect to GitHub
-            </a>
+            <a class="btn btn-large btn-primary" href="/github/new">Click to connect to GitHub</a>
           </div>
         </div>
-<% } %>
-
-				<div class="user-content">
-	                <div class="statistics">
-	                    <ul class="stat-list">
-	                        <li>
-	                        	<a href="#">
-	                            	<div class="pull-left">
-	                            		<div class="circle">109</div>
-	                            	</div>
-	                            	<div class="menu-item">Commits</div>
-	                            	<div class="clearfix"></div>
-	                            </a>
-	                        </li>
-	                        <li>
-	                        	<a href="#">
-	                            	<div class="pull-left">
-	                            		<div class="circle">2</div>
-	                            	</div>
-	                            	<div class="menu-item">Repos</div>
-	                            	<div class="clearfix"></div>
-	                        	</a>
-	                        </li>
-	                    </ul>
-	                </div>
+<% } else { %>
+ 
+                <div class="user-content">
+                    <div class="statistics">
+                        <ul class="stat-list">
+                            <li>
+                                <a href="#">
+                                    <div class="pull-left">
+                                        <div class="circle">109</div>
+                                    </div>
+                                    <div class="menu-item">Commits</div>
+                                    <div class="clearfix"></div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="pull-left">
+                                        <div class="circle">2</div>
+                                    </div>
+                                    <div class="menu-item">Repos</div>
+                                    <div class="clearfix"></div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                     <div id="entry-collection">
                         <div class="entry-node">
                             <div class="entry-type-image"></div>
@@ -133,6 +135,7 @@
                         </div>
                     </div>
                 </div>
+<% } %>
             </div>
 
             <div class="span6">
@@ -140,6 +143,7 @@
                         right brain
                     </div>
                 <div class="user-content">
+
                     <div id="entry-collection">
                         <div class="entry-node">
                             <div class="entry-type-image"></div>
@@ -172,11 +176,20 @@
                                 content feed
                             </div>
                         </div>
+
                     </div>
                 </div>
 
 
 
+<% if (!instagramConnected) { %>
+                <div class="user-content dark">
+                	<div class="login-div">
+	                	<a class="btn btn-large btn-primary" href="/instagram/new">Click to connect to Instagram
+	                	</a>
+	                </div>
+                </div>
+<% } else { %>
                 <div class="user-content">
                     <div id="gallery-collection">
                         <div class="gallery-node">
@@ -213,14 +226,8 @@
                     </div>
                 </div>
 
-<% if (!instagramConnected) { %>
-                <div class="user-content dark">
-                	<div class="login-div">
-	                	<a class="btn btn-large btn-primary" href="/instagram/new">Click to connect to Instagram
-	                	</a>
-	                </div>
-                </div>
 <% } %>
+
             </div>
         </div>
     </div>
