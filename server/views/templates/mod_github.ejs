@@ -7,82 +7,101 @@
           </div>
         </div>
 <% } else { %>
- 
-                <div class="user-content">
-                    <div class="service">
 
-                        <div class="service-head">
-                            Powered by GitHub
-                        </div>
-                        <div class="service-body">
+          <div class="user-content">
+              <div class="service">
 
-                            <div class="statistics">
-                                <ul class="stat-list">
-                                    <li>
-                                        <a href="#">
-                                            <div class="pull-left">
-                                                <div class="circle">109</div>
-                                            </div>
-                                            <div class="menu-item">Commits</div>
-                                            <div class="clearfix"></div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <div class="pull-left">
-                                                <div class="circle">2</div>
-                                            </div>
-                                            <div class="menu-item">Repos</div>
-                                            <div class="clearfix"></div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <div class="pull-left">
-                                                <div class="circle">4</div>
-                                            </div>
-                                            <div class="menu-item">Forks</div>
-                                            <div class="clearfix"></div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="entry-collection">
-                                <div class="entry-node">
-                                    <div class="entry-type-image"></div>
-                                    <div class="entry-content">
-                                        <span class="author">Rayan Bouajram</span> likes <span class="subject">Joyent</span>
-                                    </div>
-                                </div>
-                                <div class="entry-node">
-                                    <div class="entry-type-image"></div>
-                                    <div class="entry-content">
-                                        content feed
-                                    </div>
+                  <div class="service-head">
+                      Powered by GitHub
+                  </div>
+                  <div class="service-body">
 
-                                </div>
-                                <div class="entry-node">
-                                    <div class="entry-type-image"></div>
-                                    <div class="entry-content">
-                                        content feed
-                                    </div>
-                                </div>
-                                <div class="entry-node">
-                                    <div class="entry-type-image"></div>
-                                    <div class="entry-content">
-                                        content feed
-                                    </div>
-                                </div>
-                                <div class="entry-node">
-                                    <div class="entry-type-image"></div>
-                                    <div class="entry-content">
-                                        content feed
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                      <div class="statistics">
+                          <ul class="stat-list">
+                              <li>
+                                  <a href="#">
+                                      <div class="pull-left">
+                                          <div class="circle"><@=initial.public_gists@></div>
+                                      </div>
+                                      <div class="menu-item">Gists</div>
+                                      <div class="clearfix"></div>
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="#">
+                                      <div class="pull-left">
+                                          <div class="circle"><@=initial.public_repos@></div>
+                                      </div>
+                                      <div class="menu-item">Repos</div>
+                                      <div class="clearfix"></div>
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="#">
+                                      <div class="pull-left">
+                                          <div class="circle"><@=stats.pushCount@></div>
+                                      </div>
+                                      <div class="menu-item">Pushes</div>
+                                      <div class="clearfix"></div>
+                                  </a>
+                              </li>
+
+                              <li>
+                                  <a href="#">
+                                      <div class="pull-left">
+                                          <div class="circle"><@=stats.watchCount@></div>
+                                      </div>
+                                      <div class="menu-item">Watches</div>
+                                      <div class="clearfix"></div>
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="#">
+                                      <div class="pull-left">
+                                          <div class="circle"><@=stats.followCount@></div>
+                                      </div>
+                                      <div class="menu-item">Followers</div>
+                                      <div class="clearfix"></div>
+                                  </a>
+                              </li>
+</ul>
+                      </div>
+                      <div class="entry-collection">
+                          <div class="entry-node">
+                              <div class="entry-type-image"></div>
+                              <div class="entry-content">
+                                  <span class="author">Rayan Bouajram</span> likes <span class="subject">Joyent</span>
+                              </div>
+                          </div>
+                          <div class="entry-node">
+                              <div class="entry-type-image"></div>
+                              <div class="entry-content">
+                                  content feed
+                              </div>
+
+                          </div>
+                          <div class="entry-node">
+                              <div class="entry-type-image"></div>
+                              <div class="entry-content">
+                                  content feed
+                              </div>
+                          </div>
+                          <div class="entry-node">
+                              <div class="entry-type-image"></div>
+                              <div class="entry-content">
+                                  content feed
+                              </div>
+                          </div>
+                          <div class="entry-node">
+                              <div class="entry-type-image"></div>
+                              <div class="entry-content">
+                                  content feed
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
 <% } %>
 
 </script>

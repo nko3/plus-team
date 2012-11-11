@@ -1,8 +1,9 @@
 
 GL.Views.Github = GL.Framework.View.extend({
+  el: '#githubMod',
 
-  initialize: function (foo, bar) {
-    console.log(foo, bar);
+  initialize: function(obj) {
+    this._userModel = obj.userModel;
     this._template = GL.Framework.template('Github');
     this._commits = new GL.Collections.Commits(null, this.model);
     this._commits.on('reset', this.renderData, this);
@@ -18,22 +19,32 @@ GL.Views.Github = GL.Framework.View.extend({
     var json = this._commits.toJSON();
     console.log(json);
 
+    var recentStats = {
+      pushCount: 0,
+      watchCount: 0,
+      followCount: 0
+    };
+
     // Organize all the data.
     _.each(json, function(ev) {
       switch(ev.type) {
         case 'PushEvent':
-          //pushCount++;
+          recentStats.pushCount++;
           break;
         case 'WatchEvent':
-          //watchCount++;
+          recentStats.watchCount++;
           break;
         case 'FollowEvent':
-          //followCount++;
+          recentStats.followCount++;
           break;
       }
     });
 
-    $(this.el).html(this._template({ data: json }));
+    $(this.el).html(this._template({
+      data: json,
+      initial: this._userModel,
+      stats: recentStats
+    }));
     GL.Events.trigger(GL.Constants.GITHUB_DATA_RECEIVED_EVENT, json);
     return this;
   }
