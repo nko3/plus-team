@@ -1,4 +1,5 @@
 GL.Views.Facebook = GL.Framework.View.extend({
+  el: '#facebookMod',
 
   initialize: function () {
     this._template = GL.Framework.template('Facebook');
@@ -13,7 +14,10 @@ GL.Views.Facebook = GL.Framework.View.extend({
   },
 
   renderData: function() {
-    $(this.el).html(this._template());
+    var json = this._likes.toJSON();
+    console.log(json);
+
+    $(this.el).html(this._template({ data: json }));
     return this;
   }
 });

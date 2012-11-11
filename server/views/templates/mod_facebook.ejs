@@ -1,29 +1,24 @@
 <script type="type/ejs" id="templateFacebook">
 
 <div class="user-content">
-
-    <div class="service">
-
-        <div class="service-head">
-            Powered by Facebook
-        </div>
-        <div class="service-body">
-
-        <div class="entry-collection">
-            <div class="entry-node">
-                <div class="entry-type-image"></div>
-                <div class="entry-content">
-                    <span class="author">Rayan Bouajram</span> likes <span class="subject">Joyent</span>
-                </div>
-            </div>
-<< _.each(function(likes)) { >>
-            <div class="entry-node">
-                <div class="entry-type-image"></div>
-                <div class="entry-content">
-                    {{ name }}
-                </div>
-            </div>
-<< } >>
+  <div class="service">
+    <div class="service-head">
+      Powered by Facebook
+    </div>
+    <div class="service-body">
+      <div class="entry-collection">
+        <ul>
+<@ _.each (data, function(like) { @>
+        <li>
+          <img src="http://graph.facebook.com/<@=like.id@>/picture" alt="<@like.category@>" />
+          <p><span class="like-name"><@=like.name@></span><span
+          class="like-category"><@=like.category@></span></p<
+        </li>
+<@ }); @>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
 
 </script>
