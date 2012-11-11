@@ -7,12 +7,11 @@
     </div>
     <div class="service-body">
       <div class="entry-collection">
-        <ul>
+        <ul id="fbLikes">
 <@ _.each (data, function(like) { @>
         <li>
-          <img src="http://graph.facebook.com/<@=like.id@>/picture" alt="<@like.category@>" />
-          <p><span class="like-name"><@=like.name@></span><span
-          class="like-category"><@=like.category@></span></p<
+          <img src="http://graph.facebook.com/<@=like.id@>/picture" data-html="true" data-title='<span class="like-name"><@-like.name@></span><span
+          class="like-category"><@=like.category@></span>' />
         </li>
 <@ }); @>
         </ul>
@@ -20,5 +19,7 @@
     </div>
   </div>
 </div>
+
+
 
 </script>

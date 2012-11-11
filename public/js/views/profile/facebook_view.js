@@ -17,7 +17,8 @@ GL.Views.Facebook = GL.Framework.View.extend({
     var json = this._likes.toJSON();
     $(this.el).html(this._template({ data: json }));
     GL.Events.trigger(GL.Constants.FACEBOOK_DATA_RECEIVED_EVENT, json);
-
+    
+    $('#fbLikes li img', this.el).tooltip();
     return this;
   }
 });
