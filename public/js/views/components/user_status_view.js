@@ -6,7 +6,8 @@ GL.Views.UserStatus = GL.Framework.View.extend({
     _.bindAll(this);
     this._template = GL.Framework.template('UserStatus');
     this.render();
-    GL.Events.on(GL.Constants.INSTAGRAM_DATA_RECEIVED_EVENT, this.update);
+    GL.Events.on(GL.Constants.INSTAGRAM_DATA_RECEIVED_EVENT, this.updateInstagram);
+    GL.Events.on(GL.Constants.FACEBOOK_DATA_RECEIVED_EVENT, this.updateFacebook);
   },
   
   render: function() {
@@ -46,15 +47,32 @@ GL.Views.UserStatus = GL.Framework.View.extend({
     }
     
     if (this.instagram) {
-      status.creative = status.creative + this.instagram * 0.3;
+      status.creative = status.creative + this.instagram.length * 0.3;
     }
     
+    if (this.facebook) {
+      status.social = status.social + this.facebook.length * 0.1;
+    }
+    
+    status = {
+      social: Math.floor(status.social * 100) / 100,
+      creative: Math.floor(status.creative * 100) / 100,
+      geek: Math.floor(status.geek * 100) / 100,
+    }
     console.log('status', status);
     this.$el.html(this._template(status));
   },
   
-  updateInstagram: function() {
+  updateInstagram: function(json) {
+    console.log('updateInstagram', json)
     this.instagram = json;
     this.render();
+  },
+  
+  updateFacebook: function(json) {
+    console.log('updateFacebook', json)
+    this.facebook = json;
+    this.render();
   }
+
 });
