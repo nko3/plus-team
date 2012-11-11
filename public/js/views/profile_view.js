@@ -8,15 +8,17 @@ GL.Views.Profile = GL.Framework.View.extend({
   },
 
   render: function() {
+    console.log('VIEWS.PROFILE.RENDER');
     $(this.el).html('Loading ..');
     return this;
   },
 
   renderProfile: function() {
-    $(this.el).html(this._template());
+    console.log('VIEWS.PROFILE.RENDERPROFILE');
 
     var jsonModel = this.model.toJSON();
-    console.log(jsonModel);
+    $(this.el).html(this._template(jsonModel));
+    this.userCardView = new GL.Views.UserCard({model: jsonModel});
 
 
     var idModel = { id: jsonModel.id };
@@ -24,7 +26,7 @@ GL.Views.Profile = GL.Framework.View.extend({
       this.facebookView = new GL.Views.Facebook({model: idModel});
     }
     if (jsonModel.github) {
-      this.facebookView = new GL.Views.Github({model: idModel});
+      this.githubView = new GL.Views.Github({model: idModel});
     }
     if (jsonModel.instagram) {
       this.instagramView = new GL.Views.Instagram({model: idModel});
