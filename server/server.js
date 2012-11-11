@@ -9,19 +9,12 @@ var express = require('express'),
     models = require('./models'),
     sockets = require('./socket'),
     app = express(),
-    store = new MongoStore({ db: 'gl-' + app.settings.env }),
     port = process.env.PORT || 8000,
     _ = require('underscore')._,
     OAuth = require('oauth').OAuth,
     querystring = require('querystring'),
     events = require('../public/js/constants/events');
 
-// Setup the session token.
-var expressSession = express.session({
-  secret: process.env.SESSION_SECRET || 'secret123',
-  key: 'express.sid',
-  store: store
-});
 
 // Configure the main server app.
 app.configure(function() {
@@ -31,7 +24,6 @@ app.configure(function() {
   app.set('basepath', '/');
   app.set('db', models.db);
   app.set('db-uri', process.env.MONGOHQ_CONNECTION || ('mongodb://localhost/gl-' + app.settings.env));
-  app.set('store', store);
   app.set('events', events);
   app.set('github-client-id', process.env.GITHUB_CLIENT_ID || '');
   app.set('github-client-secret', process.env.GITHUB_CLIENT_SECRET || '');
@@ -41,6 +33,19 @@ app.configure(function() {
   app.set('facebook-app-id', process.env.FACEBOOK_APP_ID || '');
   app.set('facebook-app-secret', process.env.FACEBOOK_APP_SECRET || '');
   app.set('public-dir', __dirname + '/../public/');
+
+
+  var store = new MongoStore({url: app.get('db-uri')});
+  // Setup the session token.
+  var expressSession = express.session({
+    secret: process.env.SESSION_SECRET || 'secret123',
+    key: 'express.sid',
+    store: store
+  });
+
+  // SocketIO Store usage
+  app.set('store', store);
+
   app.use(express.logger());
   app.use(express.methodOverride());
   app.use(express.bodyParser());
