@@ -40,3 +40,15 @@ exports.likes = function(req, res) {
     return res.send(data.data);
   });
 }
+
+exports.users = function(req, res) {
+  console.log('API:USER');
+  var user = req.session.user;
+  var data = {
+    name: user.name,
+    facebook: user.facebook,
+    github: user.github,
+    instagram: user.instagram
+  };
+  return res.send(data);
+}
