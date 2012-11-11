@@ -20,7 +20,7 @@ exports.new = function(req, res) {
     'https://www.facebook.com/dialog/oauth',
     '?client_id=' + app.get('facebook-app-id'),
     '&redirect_uri=' + app.get('redirect-uri') + 'facebook/edit',
-    '&scope=email,user_birthday'
+    '&scope=email,user_birthday,user_likes'
   ]
   res.redirect(url.join(''));
 }

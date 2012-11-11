@@ -28,3 +28,15 @@ exports.commits = function(req, res) {
     return res.send(data);
   });
 }
+
+exports.likes = function(req, res) {
+  console.log('API:LIKES');
+  var user = req.session.user;
+  var url = 'https://graph.facebook.com/me/likes';
+  url += '?access_token=' + user.facebookAccessToken;
+  console.log(url)
+  rest.get(url).on('complete',  function(data, response) {
+    data = JSON.parse(data)
+    return res.send(data.data);
+  });
+}
