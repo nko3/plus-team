@@ -30,7 +30,7 @@ app.configure(function() {
   app.set('view options', { layout: false, pretty: true });
   app.set('basepath', '/');
   app.set('db', models.db);
-  app.set('db-uri', process.env.MONGOHQ_CONNECTION || 'mongodb://localhost/gl-' + app.settings.env);
+  app.set('db-uri', process.env.MONGOHQ_CONNECTION || ('mongodb://localhost/gl-' + app.settings.env));
   app.set('store', store);
   app.set('events', events);
   app.set('github-client-id', process.env.GITHUB_CLIENT_ID || '');
@@ -58,6 +58,7 @@ app.configure(function() {
 });
 
 // Connect to mongoose.
+console.log('connecting to db', app.get('db-uri'));
 mongoose.connect(app.get('db-uri'), function(error) {
   if (error) console.error('MongoDB is not running', error);
 });
