@@ -1,6 +1,9 @@
 
 GL.Views.Instagram = GL.Framework.View.extend({
 
+  el: '#instagramMod',
+  g:q
+
   initialize: function () {
     this._template = GL.Framework.template('Instagram');
     this._photos = new GL.Collections.Photos(null, this.model);
