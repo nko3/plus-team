@@ -17,37 +17,15 @@
                         <div class="service-body">
 
                         <div class="gallery-collection">
-                            <div class="gallery-node">
-                                <div class="gallery-type-image"></div>
+      <@ _.each(data, function(img) { @>
+      <div class="gallery-node">
+                                <div class="gallery-type-image"><img
+                                src="<@=img.images.low_resolution @>" /></div>
                                 <div class="gallery-content">
-                                    <span class="author">Rayan Bouajram</span> likes <span class="subject">Joyent</span>
+                                  <@=img.caption.text@>
                                 </div>
                             </div>
-                            <div class="gallery-node">
-                                <div class="gallery-type-image"></div>
-                                <div class="gallery-content">
-                                    content feed
-                                </div>
-
-                            </div>
-                            <div class="gallery-node">
-                                <div class="gallery-type-image"></div>
-                                <div class="gallery-content">
-                                    content feed
-                                </div>
-                            </div>
-                            <div class="gallery-node">
-                                <div class="gallery-type-image"></div>
-                                <div class="gallery-content">
-                                    content feed
-                                </div>
-                            </div>
-                            <div class="gallery-node">
-                                <div class="gallery-type-image"></div>
-                                <div class="gallery-content">
-                                    content feed
-                                </div>
-                            </div>
+   <@ }); @>
                         </div>
                     </div>
                 </div>
